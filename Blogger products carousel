@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blogger Products Carousel with Live Preview</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f9f9f9;
+  }
+  .carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px;
+  }
+  .carousel-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex: 0 0 auto;
+    width: 320px;
+    text-align: center;
+    padding: 15px;
+  }
+  iframe {
+    width: 280px;
+    height: 180px;
+    border: none;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 8px;
+  }
+  .btn-preview {
+    background: #28a745;
+    color: #fff;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background 0.3s;
+  }
+  .btn-preview:hover {
+    background: #218838;
+  }
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center; padding-top:10px;">Blogger Products Carousel</h2>
+<div class="carousel-container">
+  <div class="carousel-item">
+    <iframe src="https://beatzde4.blogspot.com/p/catalog-styles.html"></iframe>
+    <a class="btn-preview" href="https://beatzde4.blogspot.com/p/catalog-styles.html" target="_blank">Open Live Preview</a>
+  </div>
+  <div class="carousel-item">
+    <iframe src="https://beatzde4.blogspot.com/p/fab-floating-button-whatsappfab.html"></iframe>
+    <a class="btn-preview" href="https://beatzde4.blogspot.com/p/fab-floating-button-whatsappfab.html" target="_blank">Open Live Preview</a>
+  </div>
+  <div class="carousel-item">
+    <iframe src="https://beatzde4.blogspot.com/p/product-1.html"></iframe>
+    <a class="btn-preview" href="https://beatzde4.blogspot.com/p/product-1.html" target="_blank">Open Live Preview</a>
+  </div>
+  <div class="carousel-item">
+    <iframe src="https://beatzde4.blogspot.com/p/carousel-container.html"></iframe>
+    <a class="btn-preview" href="https://beatzde4.blogspot.com/p/carousel-container.html" target="_blank">Open Live Preview</a>
+  </div>
+</div>
+
+</body>
+</html>
