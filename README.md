@@ -1,3 +1,185 @@
+<style>
+  /* Catalog Styles */
+  .wa-catalog {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    max-width: 700px;
+    margin: auto;
+  }
+  .wa-product {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 160px;
+    background: #fff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .wa-product img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  .wa-product h4 {
+    margin: 8px 0 4px;
+    font-size: 14px;
+  }
+  .wa-product p {
+    font-size: 12px;
+    color: #555;
+    padding: 0 5px;
+    min-height: 32px;
+  }
+  .wa-product .price {
+    font-weight: bold;
+    color: #25D366;
+    margin: 4px 0;
+  }
+  .wa-product button {
+    background: #25D366;
+    border: none;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 12px;
+  }
+  /* Floating Chat Styles */
+  .wa-fab {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    font-size: 28px;
+  }
+  .wa-chat-box {
+    position: fixed;
+    right: 90px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+  }
+  .wa-chat-header {
+    background: #25D366;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px 8px 0 0;
+  }
+  .wa-chat-body {
+    padding: 10px;
+    font-size: 13px;
+    color: #333;
+  }
+  .wa-chat-footer {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+  }
+  .wa-chat-footer button {
+    background: #25D366;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
+
+<div class="wa-catalog" id="waCatalog"></div>
+
+<!-- Floating Chat -->
+<div class="wa-fab" id="waFab">💬</div>
+<div class="wa-chat-box" id="waChatBox">
+  <div class="wa-chat-header">WhatsApp Live Chat</div>
+  <div class="wa-chat-body">
+    Hi 👋, how can we help you today?  
+    Click below to start a chat on WhatsApp.
+  </div>
+  <div class="wa-chat-footer">
+    <button onclick="window.open('https://wa.me/233549757544','_blank')">Start Chat</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  const PRODUCTS = [
+    {
+      title: "Classic Leather Handbag",
+      price: "₵250",
+      img: "https://via.placeholder.com/160x160/E1A87B/000?text=Handbag",
+      desc: "Premium leather tote for work, travel & everyday style.",
+      link: "https://wa.me/p/8796681600402535/233549757544"
+    },
+    {
+      title: "Wireless Bluetooth Headphones",
+      price: "₵320",
+      img: "https://via.placeholder.com/160x160/1A1A1A/FFF?text=Headphones",
+      desc: "Deep bass, noise-cancelling & all-day comfort.",
+      link: "https://wa.me/p/4801727346588745/233549757544"
+    },
+    {
+      title: "Casual Sneakers",
+      price: "₵180",
+      img: "https://via.placeholder.com/160x160/C8E6C9/222?text=Sneakers",
+      desc: "Lightweight sneakers perfect for daily wear.",
+      link: "https://wa.me/p/5908362889193112/233549757544"
+    },
+    {
+      title: "Luxury Wristwatch",
+      price: "₵500",
+      img: "https://via.placeholder.com/160x160/2E3B55/FFF?text=Watch",
+      desc: "Elegant design with precision quartz movement.",
+      link: "https://wa.me/p/5176804599022575/233549757544"
+    }
+  ];
+
+  const catalogEl = document.getElementById("waCatalog");
+  PRODUCTS.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "wa-product";
+    card.innerHTML = `
+      <img src="${p.img}" alt="${p.title}">
+      <h4>${p.title}</h4>
+      <p>${p.desc}</p>
+      <div class="price">${p.price}</div>
+      <button onclick="window.open('${p.link}', '_blank')">Send Message</button>
+    `;
+    catalogEl.appendChild(card);
+  });
+
+  // Floating Chat Toggle
+  const fab = document.getElementById("waFab");
+  const chatBox = document.getElementById("waChatBox");
+  fab.addEventListener("click", () => {
+    chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+  });
+})();
+</script>
+
+
 # Blogger Product Carousel with WhatsApp Floating Button
 
 ## 📌 Overview
