@@ -1,3 +1,130 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Digital Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <div id="urlModal" class="modal-overlay">
+        <div class="flex flex-col h-full w-full max-w-5xl mx-auto p-4 md:p-10">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modalTitle" class="text-white uppercase tracking-widest text-xs font-bold">Previewing Resource</h3>
+                <button onclick="closeModal()" class="text-white hover:text-gray-400 flex items-center gap-2 transition-all">
+                    <span class="text-xs uppercase font-bold">Close</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <iframe id="modalFrame" src="" class="w-full h-full rounded-lg bg-white border-0"></iframe>
+        </div>
+    </div>
+
+    <section class="h-[70vh] hero-bg relative flex items-center justify-center text-center px-6">
+        <div class="max-w-4xl">
+            <h1 class="text-6xl md:text-9xl font-extrabold text-white tracking-tighter mb-8 uppercase leading-none">
+                CAPTURE <br><span class="text-transparent" style="-webkit-text-stroke: 1px white;">THE MOMENT</span>
+            </h1>
+            <p class="text-gray-300 text-sm md:text-lg font-light tracking-[0.2em] uppercase mb-12">
+                High Performance Business Assets & AI Solutions
+            </p>
+            <a href="https://beatzde4.blogspot.com/p/blog-page_10.html" 
+               target="_blank"
+               class="inline-block bg-white text-black px-12 py-4 text-xs font-extrabold tracking-[0.3em] uppercase hover:bg-gray-200 transition-all">
+                Access Catalog
+            </a>
+        </div>
+    </section>
+
+    <section class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                
+                <div class="group">
+                    <div class="h-[400px] bg-gray-100 mb-8 overflow-hidden relative cursor-pointer" onclick="openModal('https://beatzde4.blogspot.com/p/catalog-styles.html', 'Catalog Styles')">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+                    </div>
+                    <h2 class="text-2xl font-bold tracking-tight mb-2">CATALOG STYLES</h2>
+                    <p class="text-gray-500 font-light text-sm mb-6 uppercase tracking-wider">Interface Design</p>
+                    <button onclick="openModal('https://beatzde4.blogspot.com/p/catalog-styles.html', 'Catalog Styles')" class="text-[10px] font-black uppercase tracking-[0.2em] border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-all">
+                        Launch Preview
+                    </button>
+                </div>
+
+                <div class="group">
+                    <div class="h-[400px] bg-gray-100 mb-8 overflow-hidden relative cursor-pointer" onclick="openModal('https://beatzde4.blogspot.com/p/fab-floating-button-whatsappfab.html', 'Floating Buttons')">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+                    </div>
+                    <h2 class="text-2xl font-bold tracking-tight mb-2">FLOATING UI</h2>
+                    <p class="text-gray-500 font-light text-sm mb-6 uppercase tracking-wider">Dynamic Interaction</p>
+                    <button onclick="openModal('https://beatzde4.blogspot.com/p/fab-floating-button-whatsappfab.html', 'Floating Buttons')" class="text-[10px] font-black uppercase tracking-[0.2em] border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-all">
+                        Launch Preview
+                    </button>
+                </div>
+
+                <div class="group">
+                    <div class="h-[400px] bg-gray-100 mb-8 overflow-hidden relative cursor-pointer" onclick="openModal('https://beatzde4.blogspot.com/p/product-1.html', 'Product Architecture')">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+                    </div>
+                    <h2 class="text-2xl font-bold tracking-tight mb-2">PRODUCT HUBS</h2>
+                    <p class="text-gray-500 font-light text-sm mb-6 uppercase tracking-wider">Scalable Frameworks</p>
+                    <button onclick="openModal('https://beatzde4.blogspot.com/p/product-1.html', 'Product Architecture')" class="text-[10px] font-black uppercase tracking-[0.2em] border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-all">
+                        Launch Preview
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function openModal(url, title) {
+            document.getElementById('modalFrame').src = url;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('urlModal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Stop background scroll
+        }
+
+        function closeModal() {
+            document.getElementById('urlModal').style.display = 'none';
+            document.getElementById('modalFrame').src = '';
+            document.body.style.overflow = 'auto'; // Restore scroll
+        }
+
+        // Close on ESC key
+        window.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
 <style>
   /* Catalog Styles */
   .wa-catalog {
